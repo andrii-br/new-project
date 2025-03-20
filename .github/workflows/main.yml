@@ -14,6 +14,8 @@ jobs:
         run: |
             echo "${{ secrets.HOST_KEY }}" > private_key.pem
             chmod 400 private_key.pem
+      - name: Test ssh 
+        run: nc -vz ${{ secrets.HOST_IP }} 22
 
       - name: Debug SSH
         run: |
