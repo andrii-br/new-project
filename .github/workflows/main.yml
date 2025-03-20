@@ -21,9 +21,10 @@ jobs:
               rm -rf codapp
               git clone https://github.com/andrii-br/new-project.git codapp/
               cd codapp/
-              docker build .
+              docker build -t myapp .
               docker compose up -d
               sleep 5
               docker ps -a
               curl -i http://localhost:5000/
+              EOF
 
