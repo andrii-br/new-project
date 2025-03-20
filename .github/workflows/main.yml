@@ -29,7 +29,7 @@ jobs:
               git clone https://github.com/andrii-br/new-project.git codapp/
               cd codapp/
               docker build -t myapp .
-              docker-compose up 
+              docker-compose up --build
               sleep 5
               docker ps -a
               curl -i http://localhost:5000/
