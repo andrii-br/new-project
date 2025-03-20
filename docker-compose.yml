@@ -1,0 +1,8 @@
+services:
+  codapp:
+    build: .
+    container_name: codapp
+    volumes:
+      - ./app/:/cod-app
+    ports:
+      - "5000:5000"
