@@ -1,12 +1,12 @@
 FROM python:3.11-alpine
 
-WORKDIR /codapp
+WORKDIR /cod-app
 
-COPY ./app/ /codapp/
+COPY ./app /cod-app/app
+COPY requirements.txt /cod-app/
 
-COPY app/requirements.txt codapp/requirements.txt
-RUN pip install -r codapp/requirements.txt
+RUN pip install --no-cache-dir -r /cod-app/requirements.txt
 
 EXPOSE 5000
 
-CMD [ "python", "/codapp/app/app.py" ]
+CMD ["python", "/cod-app/app/app.py"]

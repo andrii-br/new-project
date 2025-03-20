@@ -1,6 +1,14 @@
+version: "3.8"
+
 services:
   codapp:
     build: .
     container_name: codapp
     ports:
       - "5000:5000"
+    volumes:
+      - ./app:/cod-app/app
+    environment:
+      - FLASK_APP=/cod-app/app/app.py
+      - FLASK_RUN_HOST=0.0.0.0
+    command: ["flask", "run"]
