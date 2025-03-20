@@ -4,7 +4,7 @@ WORKDIR /cod-app
 
 COPY ./app/ /cod-app/
 
-COPY requirements.txt /cod-app/
+COPY ./app/requirements.txt /cod-app/
 
 RUN pip install -r requirements.txt
 
