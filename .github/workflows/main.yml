@@ -19,7 +19,7 @@ jobs:
 
       - name: Debug SSH
         run: |
-            echo "Trying to connect..."
+            echo "Trying to connect...."
             ssh -v -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.HOS_NAME }}@${{ secrets.HOST_IP }} exit
 
       - name: Deploy to VM server
