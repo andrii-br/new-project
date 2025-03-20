@@ -17,7 +17,7 @@ jobs:
 
       - name: Deploy to VM server
         run: |
-            ssh -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.HOST_NAME }}@${{ secrets.HOST_IP }} <<EOF
+            ssh -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.HOS_NAME }}@${{ secrets.HOST_IP }} <<EOF
               rm -rf codapp
               git clone https://github.com/andrii-br/new-project.git codapp/
               cd codapp/
