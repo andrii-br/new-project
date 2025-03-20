@@ -26,5 +26,5 @@ jobs:
               sleep 5
               docker ps -a
               curl -i http://localhost:5000/
-              EOF
+            EOF
 
