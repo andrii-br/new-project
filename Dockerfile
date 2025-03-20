@@ -1,12 +1,13 @@
-FROM python:3.11-alpine
+FROM python:3.9-slim-buster
 
-WORKDIR /cod-app
+WORKDIR /app
 
-COPY ./app /cod-app/app
-COPY requirements.txt /cod-app/
+COPY ./app/requirements.txt ./
 
-RUN pip install --no-cache-dir -r /cod-app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./app .
 
 EXPOSE 5000
 
-CMD ["python", "/cod-app/app/app.py"]
+CMD ["python", "app.py"]
