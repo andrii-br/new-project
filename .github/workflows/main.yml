@@ -1,1 +1,29 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy repo
+        uses: actions/checkout@v4
+
+      - name: SSH Connection
+        run: |
+            echo "${{ secrets.HOST_KEY }}" > private_key.pem
+            chmod 400 private_key.pem
+
+      - name: Deploy to VM server
+        run: |
+            ssh -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.HOST_NAME }}@${{ secrets.HOST_IP }} <<EOF
+              rm -rf codapp
+              git clone https://github.com/andrii-br/new-project.git codapp/
+              cd codapp/
+              docker build .
+              docker compose up -d
+              sleep 5
+              docker ps -a
+              curl -i http://localhost:5000/
 
