@@ -1,10 +1,10 @@
 FROM python:3.11-alpine
 
-WORKDIR /cod-app
+WORKDIR /codapp
 
-COPY ./app/ /cod-app/
+COPY ./app/ /codapp/
 
-RUN pip install -r ./cod-app/requirements.txt
+RUN pip install -r ./codapp/app/requirements.txt
 
 EXPOSE 5000
 
