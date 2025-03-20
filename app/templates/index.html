@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="/add">Add New Build</a>
+    <ul>
+        {% for build in builds %}
+            <li><strong>{{ build.name }}</strong>: {{ build.description }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
