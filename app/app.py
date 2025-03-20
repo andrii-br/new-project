@@ -30,13 +30,11 @@ def add():
         return redirect('/')
     return render_template('add.html')
 
-
 @app.route('/api/builds')
 def api_builds():
     builds = Build.query.all()
     builds_list = [{"name": build.name, "description": build.description} for build in builds]
     return jsonify(builds_list)
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) 
