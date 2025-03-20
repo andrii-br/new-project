@@ -4,8 +4,9 @@ WORKDIR /codapp
 
 COPY ./app/ /codapp/
 
-RUN pip install -r ./codapp/app/requirements.txt
+COPY app/requirements.txt codapp/requirements.txt
+RUN pip install -r codapp/requirements.txt
 
 EXPOSE 5000
 
-CMD [ "python", "/cod-app/app/app.py" ]
+CMD [ "python", "/codapp/app/app.py" ]
