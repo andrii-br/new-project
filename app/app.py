@@ -38,5 +38,5 @@ def api_builds():
     return jsonify(builds_list)
 
 
-if name == 'main':
+if __name__ == '__main__':
     app.run(debug=True)
