@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-CMD [ "python", "app/app.py" ]
+CMD [ "python", "/cod-app/app/app.py" ]
