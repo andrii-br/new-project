@@ -14,7 +14,7 @@ jobs:
         run: |
             echo "${{ secrets.HOST_KEY }}" > private_key.pem
             chmod 400 private_key.pem
-            
+
       - name: Test ssh 
         run: nc -vz ${{ secrets.HOST_IP }} 22
 
@@ -35,4 +35,3 @@ jobs:
               docker ps -a
               curl -i http://localhost:5000/
             EOF
-
